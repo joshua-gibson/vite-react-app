@@ -1,8 +1,8 @@
 FROM node:14
-WORKDIR /app
+WORKDIR /node-servers
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
-RUN npm install
+RUN npm ci
 RUN mkdir node_modules/.cache && chmod -R 777 node_modules/.cache
 ADD . .
 
